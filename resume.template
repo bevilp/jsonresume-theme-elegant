@@ -459,6 +459,39 @@
               </div>
               {{/if}}
 
+              {{#if resume.certificates}}
+                <div class="detail" id="awards">
+                  <div class="icon">
+                    <i class="fa fa-lg fa-trophy"></i>
+                    <span class="mobile-title">Certificates</span>
+                  </div>
+                  <div class="info">
+                    <h4 class="title text-uppercase">
+                      Certificates
+                    </h4>
+                    <div class="content">
+                      <ul class="list-unstyled">
+                        {{#each resume.certificates}}
+                          <li class="card card-nested">
+                            <div class="content">
+                              <p class="clear-margin" itemprop="award">
+                                <strong>{{name}}</strong>,&nbsp;
+                                {{institution}}
+                              </p>
+                              <p class="text-muted">
+                                <small>
+                                  Awarded on: {{receiveDate}}
+                                </small>
+                              </p>
+                            </div>
+                          </li>
+                        {{/each}}
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              {{/if}}
+
               {{#if resume.awards}}
                 <div class="detail" id="awards">
                   <div class="icon">

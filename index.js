@@ -176,6 +176,12 @@ function render(resume) {
         return sort_map[ level ];
     });
 
+    _.each( resume.certificates, function( certificates_info ) {
+      if ( certificates_info.date ) {
+        certificates_info.date = moment( new Date( certificates_info.date ) ).format( 'MMM DD, YYYY' )
+      }
+    });
+
     _.each( resume.education, function( education_info ) {
         _.each( [ 'startDate', 'endDate' ], function ( date ) {
             var date_obj = new Date( education_info[ date ] );
